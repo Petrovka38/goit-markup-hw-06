@@ -302,6 +302,10 @@
                 </li>
             </ul>
         </div>
+        <div class="footer-third">
+            <p class="third-text">Подпишитесь на рассылку</p>
+            <input type="email" class="third-form" name="user-email" id="" placeholder="E-mail"/>
+        </div>
         </div>
     </footer>
     <div class="backdrop is-hidden " data-modal>
@@ -309,10 +313,34 @@
             <button data-modal-close type="button" class="modal-btn">X
             </button>
             <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+            <form class="js-speaker-form">
+                <label for="name">Имя</label>
+                <input type="text" class="modal-input" name="user-text" id="name"/>
+                <label for="tel">Телефон</label>
+                <input type="tel" class="modal-input" name="user-tel" id="tel"/>
+                <label for="email">Почта</label>
+                <input type="email" class="modal-input" name="user-email" id="email"/>
+                <label for="comment">Комментарий</label>
+                <textarea name="comment" class="modal-textarea" id="comemnt" rows="10" placeholder="Введите ваш текст"></textarea>
+                <input type="checkbox" name="" id="agree">
+                <label for="agree">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+                <button type="submit" class="modal-btn-send">Отправить</button>
+            </form>
         </div>
-
+        
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+        (() => {
+            document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}: ${value}`),
+            );
+          });
+        })();
+    </script>
 </body>
 </html>
 
