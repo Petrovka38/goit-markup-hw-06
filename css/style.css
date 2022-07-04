@@ -595,6 +595,7 @@ body {
     background-color:var(--btn-background);
     
 }
+/* Modal window */
 .backdrop {
     position: fixed;
     width: 100%;
@@ -626,6 +627,7 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transition: opacity 250ms var(--timing-function);
+    padding: 40px;
 }
 .modal-btn {
     width: 30px;
@@ -636,7 +638,9 @@ body {
     position: absolute;
     top: 8px;
     right: 8px;
-    
+}
+.modal-title {
+    text-align: center;
 }
 
 
